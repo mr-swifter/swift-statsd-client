@@ -395,7 +395,7 @@ private enum StatsdUtils {
         if dimensions.isEmpty {
             return sanitize(label)
         } else {
-            let labelWithDimensions = dimensions.reduce(label) { a, b in "\(a).\(b.0).\(b.1)" }
+            let labelWithDimensions = dimensions.reduce(label) { a, b in "\(a),\(b.0)=\(b.1)" }
             return sanitize(labelWithDimensions)
         }
     }
